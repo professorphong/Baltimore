@@ -20,3 +20,30 @@
 # username <- 'XXXYYYYYZZZZ'
 
 #Maybe we try tidygeocoder without the zip codes?
+#install.packages(dplyr)
+#install.packages(tidyverse)
+#install.packages(tidygeocoder)
+library(dplyr)
+library(tidyverse)
+library(tidygeocoder)
+
+dc_addresses <- tribble( ~name,~addr,
+                         "White House", "1600 Pennsylvania Ave Washington, DC",
+                         "National Academy of Sciences", "2101 Constitution Ave NW, Washington, DC 20418",
+                         "Department of Justice", "950 Pennsylvania Ave NW, Washington, DC 20530",
+                         "Supreme Court", "1 1st St NE, Washington, DC 20543",
+                         "Washington Monument", "2 15th St NW, Washington, DC 20024")
+
+coordinates <- dc_addresses %>%
+  geocode(addr)
+
+
+dc_addresses2 <- tribble( ~name,~addr,
+                         "White House", "1600 Pennsylvania Ave Washington, DC",
+                         "National Academy of Sciences", "2101 Constitution Ave NW, Washington, DC ",
+                         "Department of Justice", "950 Pennsylvania Ave NW, Washington, DC ",
+                         "Supreme Court", "1 1st St NE, Washington, DC ",
+                         "Washington Monument", "2 15th St NW, Washington, DC ")
+
+coordinates2 <- dc_addresses2 %>%
+  geocode(addr)
