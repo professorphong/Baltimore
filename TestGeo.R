@@ -15,3 +15,8 @@
 # For Company:  Goucher College
 # Your Username is 876GOUCH1113
 # Your Password is 204SN44QV936
+# library(rusps)
+# library(XML)
+# username <- 'XXXYYYYYZZZZ'
+
+#Maybe we try tidygeocoder without the zip codes?
